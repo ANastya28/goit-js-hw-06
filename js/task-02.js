@@ -7,18 +7,21 @@ const ingredients = [
   'Condiments',
 ];
 
-const elements = ingredients.map((text) => {
+const makeList = (item) => {
+ return ingredients.map((text) => {
   const itemEl = document.createElement('li');
   itemEl.textContent = text;
   itemEl.classList.add(`item`);
 
   return itemEl;
-});
+ });
+  
+}
 
-console.log(elements);
+const elements = makeList(ingredients);
 
-const list = document.querySelector (`#ingredients`)
-list.append(...elements) 
+const list = document.querySelector(`#ingredients`);
+list.append(...elements)
 
 console.log(list);
 
@@ -27,10 +30,27 @@ console.log(list);
 
 
 
+// ........................................................................................................................
 
+
+// const elements = ingredients.map((text) => {
+//   const itemEl = document.createElement('li');
+//   itemEl.textContent = text;
+//   itemEl.classList.add(`item`);
+
+//   return itemEl;
+// });
+
+// console.log(elements);
+
+// const list = document.querySelector (`#ingredients`)
+// list.append(...elements)
+
+// console.log(list);
 
 
 // ................................................................................................................
+
 
 // const text = ingredients[0];
 // const itemFirstEl = document.createElement('li');

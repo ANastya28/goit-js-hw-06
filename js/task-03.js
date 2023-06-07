@@ -13,3 +13,51 @@ const images = [
   },
 ];
 
+
+const makehtmlGallary = ({ url, alt }) => {
+  return `<li class="item">
+            <img src=${url}alt= ${alt}>
+          </li>`
+}
+
+const gallery = images.map(makehtmlGallary).join("");
+
+const galleryList = document.querySelector(`.gallery`);
+galleryList.insertAdjacentHTML("beforeend", gallery);
+
+console.log(galleryList);
+
+
+// ............................................................................................................
+
+
+// const makehtmlGallary = images.map(({ url, alt }) => `<li class="item"></li><img src=${url} alt=${alt}>`).join("");
+
+// const galleryList = document.querySelector(`.gallery`);
+// galleryList.insertAdjacentHTML("beforeend", makehtmlGallary);
+// console.log(galleryList);
+
+
+// ............................................................................................................
+
+
+// const makegallery = ({ url, alt }) => {
+//   const itemEl = document.createElement('li');
+//   itemEl.classList.add(`item`);
+
+//   const imgEl = document.createElement(`img`)
+//   imgEl.src = url;
+//   imgEl.alt = alt;
+
+//   itemEl.append(imgEl);
+
+//   return itemEl;
+// };
+
+// const gallery = images.map(makegallery);
+
+// const galleryList = document.querySelector(`.gallery`);
+// galleryList.append(...gallery);
+
+// console.log(galleryList);
+
