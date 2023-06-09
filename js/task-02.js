@@ -23,7 +23,7 @@ const elements = makeList(ingredients);
 const list = document.querySelector(`#ingredients`);
 list.append(...elements)
 
-console.log(list);
+// console.log(list);
 
 
 
