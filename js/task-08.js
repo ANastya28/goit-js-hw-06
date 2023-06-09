@@ -5,7 +5,7 @@ const input = document.querySelectorAll(`input`);
 
 form.addEventListener(`submit`, onFormSubmit);
 document.addEventListener("keydown", reset);
-let keypress = 1;
+
 
 function onFormSubmit(event) {
   event.preventDefault();
@@ -17,7 +17,7 @@ function onFormSubmit(event) {
     // console.log(mail, password);
   
   if (mail === "" || password === "" ) {
-      alert ("Enter your email and password")
+      return alert ("Enter your email and password")
   } const formData = {
         mail,
         password,
