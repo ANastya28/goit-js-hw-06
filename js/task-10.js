@@ -3,36 +3,42 @@ const destroyBoxButton = document.querySelector(`[data-destroy]`);
 const divBoxes = document.querySelector(`#boxes`);
 const counter = document.querySelector(`input`);
  
-createBoxButton.addEventListener("click", createBoxes);
+createBoxButton.addEventListener("click", getAmount);
 destroyBoxButton.addEventListener("click", destroyBoxes);
-counter.addEventListener("click", getAmoutn);
 
-function getAmoutn() {
-  let amount = +counter.value;
+function getAmount() {
+  let amount = counter.value;
   createBoxes(amount);
-}
-
-let step = 30;
+  // console.log(amount);
+};
 
 function createBoxes(amount) {
-  let markupEl = document.createElement("div");
-  step += 10;
-  markupEl.style.width = `${step}px`;
-  markupEl.style.heigh = `${step}px`;
-  markupEl.style.backgroundColor = getRandomHexColor();
+  let step = 30;
+  const elements = [];
 
-  divBoxes.insertAdjacentHTML("afterbegin", markupEl);
-}
+  for (let i = 0; i < amount; i += 1) {
+    const div = document.createElement(`div`);
+    div.style.width = `${step}px`;
+    div.style.heigh = `${step}px`;
+    div.style.backgroundColor = getRandomHexColor();
+    elements.push(div);
+    step += 10;
+    console.log(div);
+  };
+  
+  divBoxes.append(...elements);
+};
 
 function destroyBoxes() {
   divBoxes.innerHTML = "";
-}
+};
+
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
-}
+};
 
 
 
