@@ -1,40 +1,41 @@
-const form = document.querySelector(`.login-form`)
-let keypress = 1;
-// console.log(form)
+const form = document.querySelector(`.login-form`);
+const input = document.querySelectorAll(`input`);
+
+// console.log(input);
 
 form.addEventListener(`submit`, onFormSubmit);
+document.addEventListener("keydown", reset);
+let keypress = 1;
 
 function onFormSubmit(event) {
-    event.preventDefault();
+  event.preventDefault();
     
-    const formElements = event.currentTarget.elements;
-
-    // console.log(formElements);
-    
-    const mail = formElements.email.value;
-    const password = formElements.password.value;
-
+  const formElements = event.currentTarget.elements;
+    // console.log(formElements);  
+  const mail = formElements.email.value;
+  const password = formElements.password.value;
     // console.log(mail, password);
-    
-    const formData = {
+  
+  if (mail === "" || password === "" ) {
+      alert ("Enter your email and password")
+  } const formData = {
         mail,
         password,
-    };
-   
-    console.log(formData);
-}
+  };
+  console.log(formData);
+} 
 
-form.addEventListener(`click`, reset);
-
-function reset() {
-  form.value = "";
-}
+function reset(event) {
+  const keyCode = `Escape`;
+  if (event.code === keyCode) {
+    input.forEach(item => item.value = "");
+  };
+};
 
 
 // ........................................................................................................
 
 // 1@mail.com
-
 
 
 // const form = document.querySelector(`.login-form`)

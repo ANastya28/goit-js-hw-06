@@ -10,11 +10,11 @@ function onEventionInput() {
     if (!onFocus) {
         inputValue.addEventListener("blur", () => {
             if (inputValue.value.length === inputLenght) {
-                inputValue.classList.remove("invalid");
+           
                 inputValue.classList.add("valid");
             } else if (inputValue.value.length === 0) {
                 inputValue.classList.remove("valid");
-                inputValue.classList.remove("invalid");
+    
             } else inputValue.classList.add("invalid");
         });
     }
