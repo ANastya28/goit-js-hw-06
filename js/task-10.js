@@ -19,11 +19,11 @@ function createBoxes(amount) {
   for (let i = 0; i < amount; i += 1) {
     const div = document.createElement(`div`);
     div.style.width = `${step}px`;
-    div.style.heigh = `${step}px`;
+    div.style.height = `${step}px`;
     div.style.backgroundColor = getRandomHexColor();
     elements.push(div);
     step += 10;
-    console.log(div);
+    // console.log(div);
   };
   
   divBoxes.append(...elements);
